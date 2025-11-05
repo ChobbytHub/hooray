@@ -54,3 +54,45 @@ build-iPhoneSimulator/
 
 # Used by RuboCop. Remote config files pulled in from inherit_from directive.
 # .rubocop-https?--*
+
+# =========================
+# 🌍 共通（全体で無視したいもの）
+# =========================
+.DS_Store
+.env
+*.log
+node_modules/
+dist/
+coverage/
+tmp/
+*.swp
+
+# =========================
+# 🎨 Frontend（Vite + React）
+# =========================
+/frontend/node_modules
+/frontend/dist
+/frontend/.env
+/frontend/.env.local
+/frontend/.DS_Store
+
+# =========================
+# ⚙️ Backend（Rails API）
+# =========================
+/backend/.bundle
+/backend/log/*
+!/backend/log/.keep
+/backend/tmp/*
+!/backend/tmp/.keep
+/backend/storage/*
+!/backend/storage/.keep
+/backend/.env
+/backend/.env.local
+/backend/config/master.key
+/backend/.DS_Store
+
+# =========================
+# 📦 その他
+# =========================
+/.vscode
+.idea/
