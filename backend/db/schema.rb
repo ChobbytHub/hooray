@@ -10,8 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 0) do
+ActiveRecord::Schema[8.1].define(version: 2025_11_05_093450) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
+  create_table "reports", force: :cascade do |t|
+    t.text "content_issue"
+    t.text "content_learning"
+    t.text "content_work"
+    t.datetime "created_at", null: false
+    t.date "report_date"
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id", "report_date"], name: "index_reports_on_user_id_and_report_date", unique: true
+    t.index ["user_id"], name: "index_reports_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.datetime "remember_created_at"
+    t.datetime "reset_password_sent_at"
+    t.string "reset_password_token"
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  add_foreign_key "reports", "users"
 end
