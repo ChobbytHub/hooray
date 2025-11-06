@@ -88,9 +88,12 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    database: backend_production
-    username: backend
-    password: <%= ENV["BACKEND_DATABASE_PASSWORD"] %>
+    database: <%= ENV['DB_NAME'] %>
+    username: <%= ENV['DB_USER'] %>
+    password: <%= ENV['DB_PASSWORD'] %>
+    host: <%= ENV['DB_HOST'] %>
+    port: <%= ENV['DB_PORT'] || 5432 %>
+    sslmode: require
   cache:
     <<: *primary_production
     database: backend_production_cache
