@@ -86,7 +86,7 @@ Rails.application.configure do
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
 
   config.hosts = [
-    "mini-report.onrender.com",
+    "hooray-w9xk.onrender.com",
     "localhost",
     "localhost:3000"
   ]

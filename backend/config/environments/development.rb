@@ -72,7 +72,7 @@ Rails.application.configure do
   # config.generators.apply_rubocop_autocorrect_after_generate!
 
   config.hosts = [
-    "mini-report.onrender.com",
+    "hooray-w9xk.onrender.com",
     "localhost",
     "localhost:3000"
   ]
